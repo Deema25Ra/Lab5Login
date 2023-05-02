@@ -55,8 +55,14 @@ public class MainActivity extends AppCompatActivity {
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                try {
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                }
+                catch(Exception e)
+                {
+                    Toast.makeText(MainActivity.this,e.toString(),Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
